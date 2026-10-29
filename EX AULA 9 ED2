@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+
+#define ORDEM 4
+
+typedef struct Pagina {
+    int quantidade;
+    int chaves[ORDEM - 1];
+    struct Pagina *filhos[ORDEM];
+    bool ehFolha;
+} Pagina;
+
+Pagina *alocarNo() {
+    Pagina *novaPag = (Pagina*)malloc(sizeof(Pagina));
+
+    if (novaPag != NULL) {
+        novaPag->quantidade = 0;
+        novaPag->ehFolha = true;
+
+        for (int i = 0; i < ORDEM; i++) {
+            novaPag->filhos[i] = NULL;
+        }
+    }
+
+    return novaPag;
+}
+
+int main() {
+
+  return 0;
+}
